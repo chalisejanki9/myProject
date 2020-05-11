@@ -1,0 +1,21 @@
+ion-input{
+     --placeholder-opacity: 0.4;
+     border: solid 0.6px;
+     border-radius: 25px;
+    
+     --padding-start: 10px !important;
+     --placeholder-font-style:italic;
+}
+.error_messages{
+color: red;
+}
+.sc-ion-input-md-h {
+     --padding-top: 5px;
+    
+     --padding-bottom: 5px;
+    
+ }
+
+ion-label{
+     font-size: 16px;
+}

@@ -1,0 +1,64 @@
+<ion-header style="color:blue;border-color: blue">
+  <ion-toolbar >
+    <ion-title >Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="LoginForm">
+  <ion-card>
+    <ion-card-content>
+  <ion-grid>
+  <ion-row>
+    <ion-col size-md=5 offset=2>
+      <div>
+        <ion-label >Enter UserName</ion-label>
+      </div>
+      <div>
+        <ion-item lines="none"> 
+        
+        <ion-input  formControlName="userName" placeholder="Enter UserName" clear-on-edit=true  ></ion-input>
+        </ion-item>
+        <div class="error_messages">
+          <ng-container *ngFor="let error of error_messages.userName">
+            <div class="error_messages" *ngIf="LoginForm.get('userName').hasError(error.type) && (LoginForm.get('userName').dirty || LoginForm.get('userName').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div>
+
+      </div>
+    
+      
+        <div>
+          <ion-label>Enter Password</ion-label>
+        </div>
+       <div>
+        <ion-item lines="none"> 
+          <ion-input formControlName="password"placeholder="Enter Password" [type]="passwordType" clear-on-edit=true > </ion-input>
+          <ion-icon [name]="passwordIcon" (click)='hideShowPassword()' style="float: right; padding-left: 5px;" ></ion-icon>
+        </ion-item>
+        <div class="error_messages">
+          <ng-container *ngFor="let error of error_messages.password">
+            <div class="error_messages" *ngIf="LoginForm.get('password').hasError(error.type) && (LoginForm.get('password').dirty || LoginForm.get('password').touched)">
+              {{ error.message }}
+            </div>
+          </ng-container>
+        </div>
+       </div> 
+      
+    </ion-col>
+   
+  </ion-row>
+  <ion-row >
+    <ion-col size=6 offset=3  text-center >
+    <ion-button >login</ion-button>
+    <ion-button>Signup</ion-button>
+  </ion-col>
+  </ion-row>
+  
+</ion-grid>
+</ion-card-content>
+</ion-card>
+</form>
+</ion-content>
