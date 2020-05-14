@@ -26,7 +26,7 @@ export class LoginPage implements OnInit {
     this.LoginForm = this.formBuilder.group({
       userName : new FormControl('',Validators.compose([
         Validators.required,
-        Validators.minLength(6)
+        Validators.minLength(5)
       ])),
       password :new FormControl('',Validators.compose([
         Validators.required
